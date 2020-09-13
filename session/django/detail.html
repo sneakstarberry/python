@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="slide.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <title>KiHongPark's Blog</title>
+</head>
+
+<body>
+  <header>
+    <p>KiHongPark's Blog</p>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Posts<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Me</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Follow
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Github</a>
+            <a class="dropdown-item" href="#">Instagram</a>
+            <a class="dropdown-item" href="#">Facebook</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="id" placeholder="아이디" aria-label="ID">
+        <input class="form-control mr-sm-2" type="id" placeholder="비밀번호" aria-label="PASSWORD">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+      </form>
+    </div>
+  </nav>
+  <div style="display:flex;">
+    <section>
+      <div style="width:70%; background-color: ivory;height:100%; display: flex; justify-content: center;">
+        <div style="background-color: red; width: 60vw; height:100%">
+          <div>
+            <h1 style="text-align: center;">멋쟁이사자처럼은 전설이다.</h1>
+            <div style="margin-top:20px">updated at: 2020-05-24 4:48</div>
+            <div>created at: 2020-05-24 4:48</div>
+            <div style="font-size: 40px; margin-top:30px">미안하다 이거 보여주려고 어그로 끌었다.
+              이거 정말 실화냐? 그 찐따 같던 찐따 사자 맞냐?
+              어느새 자라서 멋쟁이 사자가 되어서 다른 아기사자들
+              가르쳐주는 운영진을 보면 가슴이 웅장해진다. </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <aside class="aside">
+      <div class="selected">◀</div>
+      <img src="https://avatars1.githubusercontent.com/u/48791447?s=460&v=4">
+      <div class="user-items">박기홍</div>
+      <div class="user-items">sneakstarberry.github.io</div>
+      <div class="user-items">gihong2012@likelion.org</div>
+      <div class="user-items">JS, Python, C, C++, Dart, TS, Go, Rust 할줄 알고 Flutter, Django, React, Redux, Docker 다룰줄
+        압니다.</div>
+      <pre class="user-items">멋쟁이사자처럼 7기 수료
+멋쟁이사자처럼 8기 운영진</pre>
+    </aside>
+  </div>
+  <footer style="display:flex; justify-content: space-between; align-items: center;">
+    <div></div>
+    <div style="color:white">
+      powered by KiHongPark
+    </div>
+    <div style="color: white; padding:8px; display:flex; justify-content: center;">
+      <a style="color:white; padding-left: 8px;display:flex;align-items: center;" href="#">Github</a>
+      <a style="color:white; padding-left: 8px;" href="#">Instagram</a>
+      <a style="color:white; padding-left: 8px;" href="#">Facebook</a>
+    </div>
+  </footer>
+
+  <script>
+    const $button = document.querySelector(".selected");
+    const $aside = document.querySelector("aside");
+    const $section = document.querySelector("section > div")
+
+    800 > innerWidth ? $aside.style.display = "none" : null;
+    window.addEventListener("resize", () => 800 > innerWidth ? $aside.style.display = "none" : $aside.style.display = "");
+
+    $button.addEventListener("click", hideToggle);
+    $button.style.transition = "all 0.2s"
+    $button.style.transform = "rotate(0deg)"
+    $button.style.transformOrigin = "center"
+
+    function hideToggle(e) {
+      $aside.classList.toggle("hide")
+      $section.classList.toggle("act")
+      $button.style.transform == "rotate(0deg)" ? $button.style.transform = "rotate(180deg)" : $button.style.transform = "rotate(0deg)"
+    }
+  </script>
+</body>
+
+</html>
